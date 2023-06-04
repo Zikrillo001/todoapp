@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        a{
+            text-decoration:none;
+
+        }
+        ul{
+            list-style-type: none;
+            padding:0
+        }
+        header{
+            width:100%;
+            padding:30px 0;
+            background-color: deepskyblue;
+            font-size: 36px;
+            color: #ffffff;
+            font-weight: bolder;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+
+        body{
+            height: 100vh;
+            width: 100%;
+            display:flex;
+            flex-direction:column;
+        }
+
+        .container{
+            width:1300px;
+            margin:0 auto;
+            padding:0 15px;
+        }
+
+        main{
+            margin-top: 80px;
+        }
+        
+        footer{
+            padding:20px 0;
+            margin-top: auto;
+            background-color: #638CB8;
+        }
+        .footer__into{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #ffffff;
+        }
+        .links a{
+            color:lemonchiffon;
+        }
+        .header__into{
+            display:flex;
+            align-items:center;
+            justify-content: space-between;
+        }
+
+        .header__into .logo{
+            color: #ffffff;
+            font-size: 30px;
+        }
+
+        .header__into .add__btn{
+            background-color:greenyellow;
+            border-radius: 10px;
+            display: block;
+            font-size: 20px;
+            padding: 10px 23px;
+        }
+
+    </style>
+</head>
+<body>
+    {% load static %}
+    {% load crispy_forms_tags %}
+    <header>
+        <div class="container">
+           <div class="header__into">
+               <a class="logo" href="{% url 'task_list' %}">This is for to do list</a>
+
+                <a class="add__btn" href="{% url 'add_task' %}">Add Task</a>
+           </div>
+        </div>
+    </header>
+  <main>
+       <div class="container">
+            {% block content %}
+            {% endblock content %}
+       </div>
+      <div class="container">
+
+      </div>
+  </main>
+
+   <footer><div class="container footer__into">
+       <div class="links">
+           <div><a href="tel:+998977173307">97-717-33-07</a></div>
+           <div><a  href="mailto:adamsjames1844@gmail.com">adamsjames1844@gmail.com</a></div>
+       </div>
+       <div>
+           Powered by ZIKRILLO
+       </div>
+   </div>
+   </footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+</body>
+</html>

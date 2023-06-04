@@ -1,0 +1,8 @@
+{% extends 'tasks/task_index.html' %}
+{% block content %}
+{%load static%}
+<h1>Task Details</h1>
+<h2>Title: {{ task.title }}</h2>
+<p>Description: {{ task.description }}</p>
+<p>Completed: {{ task.completed }}</p>
+{% endblock %}
